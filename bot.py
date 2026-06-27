@@ -1,11 +1,12 @@
 import logging
 import asyncio
+import os
 import anthropic
 from telegram import Update
 from telegram.ext import Application, MessageHandler, filters, ContextTypes, CommandHandler
 
 TELEGRAM_TOKEN = "8773920789:AAGJlEuLB6DvMK6U9dIpGrd6kYwBwe2zm_E"
-ANTHROPIC_API_KEY = "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"
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
